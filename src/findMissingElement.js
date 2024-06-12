@@ -7,19 +7,24 @@
 function findMissingElement(expectedElements, actualElements) {
     const missingElements = [];
 
-    for (let element of expectedElements){
+    for (let expectedElement of expectedElements){
+        if (checkIfExists(expectedElement, actualElements) === false) {
+            missingElements.push(expectedElement);
+        } 
     }
     return missingElements;
 }
 
-
-function checkArrayLength(expectedElements, actualElements) {
-    if (expectedElements.length === actualElements.length){
-        return []
+function checkIfExists (element, inputArray){
+    for (let i = 0; i < inputArray.length; i++){
+            if (inputArray[i] === element){
+                return true;
+            } 
     }
+    return false;
 }
 
-export { findMissingElement, checkArrayLength };
+export { findMissingElement, checkIfExists };
 
 
 
