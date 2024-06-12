@@ -1,4 +1,4 @@
-import { findMissingElement, checkArrayLengthArrayLength, checkArrayLength } from "./findMissingElement.js";
+import { findMissingElement, checkArrayLength } from "./findMissingElement.js";
 import { test, expect } from "@jest/globals";
 
 // jest docs for expect "matchers"
@@ -6,7 +6,7 @@ import { test, expect } from "@jest/globals";
 
 
 test("checking that length of both arrays are the same", () => {
-  expect(checkArrayLength(["1", "2", "3"],["1", "3"])).toEqual(["2"]);
+  expect(checkArrayLength(["1", "2", "3"],["1", "3", "4"])).toEqual(["2"]);
 });
 
 
